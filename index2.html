@@ -218,26 +218,26 @@
           <div class="bl_selectBlock_wrapper_wrapper">
             <div class="bl_selectBlock_ttl">標準学習期間</div>
             <div class="bl_selectBlock_content js_conditions" data-type="price">
-              <span class="bl_selectBlock_check"><input id="price-u500" type="checkbox" name="price" value="u500">
-                <label for="price-u500">
+              <span class="bl_selectBlock_check"><input id="term-1" type="checkbox" name="price" value="term-1">
+                <label for="term-1">
                   <span class="el_checkbox"></span>
                   6か月以内
                 </label>
               </span>
-              <span class="bl_selectBlock_check"><input id="price-o500u1000" type="checkbox" name="price" value="o500u1000">
-                <label for="price-o500u1000">
+              <span class="bl_selectBlock_check"><input id="term-2" type="checkbox" name="price" value="term-2">
+                <label for="term-2">
                   <span class="el_checkbox"></span>
                   6か月～1年半
                 </label>
               </span>
-              <span class="bl_selectBlock_check"><input id="price-o1000" type="checkbox" name="price" value="o1000">
-                <label for="price-o1000">
+              <span class="bl_selectBlock_check"><input id="term-3" type="checkbox" name="price" value="term-3">
+                <label for="term-3">
                   <span class="el_checkbox"></span>
                   1年半～3年
                 </label>
               </span>
-                  <span class="bl_selectBlock_check"><input id="price-o1000" type="checkbox" name="price" value="o1000">
-                <label for="price-o1000">
+                  <span class="bl_selectBlock_check"><input id="term-4" type="checkbox" name="price" value="term-4">
+                <label for="term-4">
                   <span class="el_checkbox"></span>
                   3年以上
                 </label>
@@ -265,13 +265,13 @@
       </div>
 
       <div class="bl_searchResultBlock">
-        <div class="bl_searchResultBlock_item js_target" data-type="japan" data-price="u500" data-location="no">公認会計士</div>
-        <div class="bl_searchResultBlock_item js_target" data-type="china" data-price="u500" data-location="no">税理士</div>
-        <div class="bl_searchResultBlock_item js_target" data-type="italia" data-price="u500" data-location="no">簿記試験</div>
-        <div class="bl_searchResultBlock_item js_target" data-type="japan" data-price="o500u1000" data-location="no">建設業経理士検定</div>
-        <div class="bl_searchResultBlock_item js_target" data-type="china" data-price="o500u1000" data-location="student">ビジネス会計検定試験</div>
-        <div class="bl_searchResultBlock_item js_target" data-type="italia" data-price="o500u1000" data-location="student">IPO実務検定</div>
-        <div class="bl_searchResultBlock_item js_target" data-type="japan" data-price="u500" data-location="student" >財務報告実務検定</div>
+        <div class="bl_searchResultBlock_item js_target" data-type="japan" data-price="term-3" data-location="no">公認会計士</div>
+        <div class="bl_searchResultBlock_item js_target" data-type="china" data-price="term-1" data-location="no">税理士</div>
+        <div class="bl_searchResultBlock_item js_target" data-type="italia" data-price="term-4" data-location="no">簿記試験</div>
+        <div class="bl_searchResultBlock_item js_target" data-type="japan" data-price="term-2" data-location="no">建設業経理士検定</div>
+        <div class="bl_searchResultBlock_item js_target" data-type="china" data-price="term-2" data-location="student">ビジネス会計検定試験</div>
+        <div class="bl_searchResultBlock_item js_target" data-type="italia" data-price="term-4" data-location="student">IPO実務検定</div>
+        <div class="bl_searchResultBlock_item js_target" data-type="japan" data-price="term-4" data-location="student" >財務報告実務検定</div>
 
       </div>
 
@@ -279,109 +279,7 @@
 
   </div>
 
-  <script>
-  $(function(){
-  var box = $('.js_target');//検索対象のDOMを格納する
-  var conditions = $('.js_conditions');//現在の条件の選択状況を保持するオブジェクト
-  var findConditions;//各data-typeの子要素(input)を格納する
-  var currentType;//現在のdata-typeを示す
-  var count = 0;//検索ヒット数
-  var checkcount = 0;//各data-typeのチェックボックス選択数
-  var data_check = 0;//対象項目のデータがどれだけチェック状態と一致しているか
- 
-  var condition ={};//チェックボックスの入力状態を保持するオブジェクト
- 
-  $('.js_denominator').text(box.length);//件数表示の分母をセット
- 
-  for(var i = 0; i < conditions.length; i++){//ターゲットのdata-typeを参照し、メソッドとしてconditionに個別に代入する
-    currentType = conditions[i].getAttribute('data-type');
-    condition[currentType] = [];
-  }
- 
-  function setConditions(){//条件設定
- 
-    count = 0;
-    box.removeClass('js_selected');
- 
-    for(var i = 0; i < conditions.length; i++){//data-typeごとの処理
- 
-      currentType = conditions[i].getAttribute('data-type');
- 
-      findConditions = conditions[i].querySelectorAll('input');
- 
-      for(var n = 0; n< findConditions.length; n++){//inputごとの処理
- 
-        if(findConditions[n].checked){//現在選択中のインプットが選択されている場合
-          condition[currentType][findConditions[n].value] = true;
-          checkcount++
-        } else {
-          condition[currentType][findConditions[n].value] = false;
-        }
-        if(findConditions.length === n+1){//ループが最後の場合
-          if(checkcount === 0){
-            for(var t = 0; t < findConditions.length; t++){
-              condition[currentType][findConditions[t].value] = true;
-            }
-          }
-          checkcount = 0;
-        }
-      }
-    }
- 
- 
-    for(var m = 0, len = box.length; m< len; ++m){//最初に取得したターゲットの情報と、現在のinputの選択状態を比較して処理を行う
- 
-      for(var i = 0; i < conditions.length; i++){//ターゲットのdata-typeを参照し、メソッドとしてconditionに個別に代入する
-        currentType = conditions[i].getAttribute('data-type');
-        //現在のターゲットのtype情報をカンマ区切りで分割し、配列に代入
-        var currentBoxTypes = $(box[m]).data(currentType).split(',');
-
-        for(var j = 0; j < currentBoxTypes.length; j++){
-          if(condition[currentType][currentBoxTypes[j]]){
-            data_check++;//選択した条件のうちひとつでもマッチしてたらdata_checkを加算してループを抜ける
-            break;
-          } else {
-   
-          }
-        }
-
-      }
- 
-        if(data_check === conditions.length){
-          count++;
-          $(box[m]).addClass('js_selected');
-        }else{
- 
-        }
-        data_check = 0;
- 
-    }
- 
- 
-    $('.js_numerator').text(count);//件数表示の分子をセット
-  }
- 
-  setConditions();
- 
-  $(document).on('click','input',function(){
- 
-    setConditions();
- 
-  });
- 
-  $(document).on('click','.js_release',function(){
- 
-    $('.bl_selectBlock_check input').attr("checked", false);
- 
-    setConditions();
- 
-  });
- 
-   
- 
- 
-});
-  </script>
+  <script src="./js/main.js"></script>
 
 </body>
 
