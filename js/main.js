@@ -75,8 +75,6 @@ $(function(){
    
 	  }
    
-   
-	  $('.js_numerator').text(count);//件数表示の分子をセット
 	}
    
 	setConditions();
