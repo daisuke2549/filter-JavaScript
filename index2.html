@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<body id="demopage">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
+  <title>Spreadsheep</title>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48759582-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+
+  <style>
+    input{
+      display: none;
+    }
+    .bl_3daysSearchBlock{
+      margin-bottom: 60px;
+    }
+    .bl_3daysSearchBlock_inner{
+      width: 82.9%;
+      max-width: 1160px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .bl_3daysSearchBlock_ttl{
+      text-align: center;
+      margin: 55px 0;
+    }
+    .bl_3daysSearchBlock_ttl_main{
+      font-size: 27px;
+      color: #0073aa;
+      margin-bottom: 15px;
+      font-weight: bold;
+      letter-spacing: 0.15em;
+      font-family: "Josefin Sans" , "NotoSansCJKjp-Jxck", "Noto Sans CJK JP" , "Noto Sans" , "Noto Sans Japanese" ,"Helvetica Neue", "Meiryo" , "メイリオ", "YuGothic", "游ゴシック",sans-serif;
+    }
+    .bl_3daysSearchBlock_ttl_sub{
+      font-size: 16px;
+      color: #0073aa;
+      letter-spacing: 0.2em;
+    }
+    .el_searchResult{
+      text-align: center;
+      color: #0073aa;
+    }
+    .js_target{
+      display: none;
+    }
+    .js_target.js_selected{
+      display: block;
+    }
+    .bl_selectBlock label{
+      display: inline;
+    }
+    .bl_selectBlock input{
+    }
+    .bl_selectBlock_check label .el_checkbox{
+      position: relative;
+      top: 3px;
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      margin-right: 5px;
+      border: 1px solid #0073aa;
+    }
+    .bl_selectBlock_check label .el_checkbox:after{
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      bottom: 4px;
+      right: 4px;
+    }
+    .bl_selectBlock_check input[type=checkbox]:checked + label .el_checkbox:after{
+      background-color: #0073aa;
+    }
+    .el_searchResult{
+      margin-bottom: 20px;
+    }
+    .bl_selectBlock{
+      border: 1px solid #0073aa;
+      padding: 30px;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+    }
+    .bl_selectBlock_wrapper_wrapper{
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .bl_selectBlock_check label{
+      cursor: pointer;
+    }
+    .bl_selectBlock_ttl{
+      width: 185px;
+      color: #0073aa;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+    @media screen and (max-width: 765px){
+      .bl_selectBlock_ttl{
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+    .bl_selectBlock_content{
+      width: calc(100% - 185px);
+    }
+    @media screen and (max-width: 765px){
+      .bl_selectBlock_content{
+        width: 100%;
+      }
+    }
+    .bl_searchResultBlock{
+      font-size: 14px;
+      border-top: 1px solid #bdbdbd;
+    }
+    .bl_searchResultBlock_item{
+      padding: 20px 0;
+      box-sizing: border-box;
+      border-bottom: 1px solid #bdbdbd;
+    }
+    .bl_selectBlock_check{
+      display: inline-block;
+      margin-right: 25px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .bl_selectBlock_check:last-child{
+      margin-right: 0;
+    }
+    .bl_selectBlock_release{
+      text-align: center;
+      color: #fff;
+      background-color: #bdbdbd;
+      padding: 15px 0;
+    }
+    .js_release{
+      cursor: pointer;
+    }
+  </style>
+
+  <div class="bl_3daysSearchBlock">
+
+    <div class="bl_3daysSearchBlock_inner">
+
+      <div class="bl_3daysSearchBlock_ttl">
+        <div class="bl_3daysSearchBlock_ttl_main">自分にあった資格を見つけるページ</div>
+        
+      </div>
+
+      <div id="select" class="bl_selectBlock">
+
+        <div class="el_searchResult">
+          <span class="el_searchResult_nume js_numerator"></span>件／全<span class="el_searchResult_deno js_denominator"></span>件
+        </div>
+
+        <div class="bl_selectBlock_wrapper">
+
+          <div class="bl_selectBlock_wrapper_wrapper">
+            <div class="bl_selectBlock_ttl">難易度</div>
+            <div class="bl_selectBlock_content js_conditions" data-type="type">
+              <span class="bl_selectBlock_check"><input id="type-japan" type="checkbox" name="type" value="japan">
+                <label for="type-japan">
+                <span class="el_checkbox"></span>
+                　　★
+                </label>
+              </span>
+              <span class="bl_selectBlock_check"><input id="type-china" type="checkbox" name="type" value="china">
+                <label for="type-china">
+                <span class="el_checkbox"></span>
+                ★★
+                </label>
+              </span>
+              <span class="bl_selectBlock_check"><input id="type-italia" type="checkbox" name="type" value="italia">
+                <label for="type-italia">
+                <span class="el_checkbox"></span>
+                ★★★
+                </label>
+              </span>
+              <span class="bl_selectBlock_check"><input id="type-italia" type="checkbox" name="type" value="italia">
+              <label for="type-italia">
+              <span class="el_checkbox"></span>
+              ★★★
+              </label>
+            　</span>
+              <span class="bl_selectBlock_check"><input id="type-italia" type="checkbox" name="type" value="italia">
+              <label for="type-italia">
+              <span class="el_checkbox"></span>
+              ★★★
+              </label>
+            </span>
+            </div>
+          </div>
+          <div class="bl_selectBlock_wrapper_wrapper">
+            <div class="bl_selectBlock_ttl">標準学習期間</div>
+            <div class="bl_selectBlock_content js_conditions" data-type="price">
+              <span class="bl_selectBlock_check"><input id="price-u500" type="checkbox" name="price" value="u500">
+                <label for="price-u500">
+                  <span class="el_checkbox"></span>
+                  6か月以内
+                </label>
+              </span>
+              <span class="bl_selectBlock_check"><input id="price-o500u1000" type="checkbox" name="price" value="o500u1000">
+                <label for="price-o500u1000">
+                  <span class="el_checkbox"></span>
+                  6か月～1年半
+                </label>
+              </span>
+              <span class="bl_selectBlock_check"><input id="price-o1000" type="checkbox" name="price" value="o1000">
+                <label for="price-o1000">
+                  <span class="el_checkbox"></span>
+                  1年半～3年
+                </label>
+              </span>
+                  <span class="bl_selectBlock_check"><input id="price-o1000" type="checkbox" name="price" value="o1000">
+                <label for="price-o1000">
+                  <span class="el_checkbox"></span>
+                  3年以上
+                </label>
+              </span>
+            </div>
+          </div>
+          <div class="bl_selectBlock_wrapper_wrapper">
+            <div class="bl_selectBlock_ttl">その他</div>
+            <div class="bl_selectBlock_content js_conditions" data-type="location">
+              <span class="bl_selectBlock_check"><input id="location-kanazawa" type="checkbox" name="location" value="kanazawa">
+                <label for="location-kanazawa">
+                  <span class="el_checkbox"></span>
+                  受験資格なし
+                </label>
+              </span>
+              <span class="bl_selectBlock_check"><input id="location-kaga" type="checkbox" name="location" value="kaga">
+                <label for="location-kaga">
+                  <span class="el_checkbox"></span>
+                  学生に人気
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bl_searchResultBlock">
+        <div class="bl_searchResultBlock_item js_target" data-type="japan" data-price="u500" data-location="kanazawa">公認会計士</div>
+        <div class="bl_searchResultBlock_item js_target" data-type="china" data-price="u500" data-location="kanazawa">税理士</div>
+        <div class="bl_searchResultBlock_item js_target" data-type="italia" data-price="u500" data-location="kanazawa">簿記試験</div>
+        <div class="bl_searchResultBlock_item js_target" data-type="japan" data-price="o500u1000" data-location="kanazawa">建設業経理士検定</div>
+        <div class="bl_searchResultBlock_item js_target" data-type="china" data-price="o500u1000" data-location="kanazawa">ビジネス会計検定試験</div>
+        <div class="bl_searchResultBlock_item js_target" data-type="italia" data-price="o500u1000" data-location="kanazawa">IPO実務検定</div>
+        <div class="bl_searchResultBlock_item js_target" data-type="japan" data-price="u500" data-location="kaga" >財務報告実務検定</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+  $(function(){
+  var box = $('.js_target');//検索対象のDOMを格納する
+  var conditions = $('.js_conditions');//現在の条件の選択状況を保持するオブジェクト
+  var findConditions;//各data-typeの子要素(input)を格納する
+  var currentType;//現在のdata-typeを示す
+  var count = 0;//検索ヒット数
+  var checkcount = 0;//各data-typeのチェックボックス選択数
+  var data_check = 0;//対象項目のデータがどれだけチェック状態と一致しているか
+ 
+  var condition ={};//チェックボックスの入力状態を保持するオブジェクト
+ 
+  $('.js_denominator').text(box.length);//件数表示の分母をセット
+ 
+  for(var i = 0; i < conditions.length; i++){//ターゲットのdata-typeを参照し、メソッドとしてconditionに個別に代入する
+    currentType = conditions[i].getAttribute('data-type');
+    condition[currentType] = [];
+  }
+ 
+  function setConditions(){//条件設定
+ 
+    count = 0;
+    box.removeClass('js_selected');
+ 
+    for(var i = 0; i < conditions.length; i++){//data-typeごとの処理
+ 
+      currentType = conditions[i].getAttribute('data-type');
+ 
+      findConditions = conditions[i].querySelectorAll('input');
+ 
+      for(var n = 0; n< findConditions.length; n++){//inputごとの処理
+ 
+        if(findConditions[n].checked){//現在選択中のインプットが選択されている場合
+          condition[currentType][findConditions[n].value] = true;
+          checkcount++
+        } else {
+          condition[currentType][findConditions[n].value] = false;
+        }
+        if(findConditions.length === n+1){//ループが最後の場合
+          if(checkcount === 0){
+            for(var t = 0; t < findConditions.length; t++){
+              condition[currentType][findConditions[t].value] = true;
+            }
+          }
+          checkcount = 0;
+        }
+      }
+    }
+ 
+ 
+    for(var m = 0, len = box.length; m< len; ++m){//最初に取得したターゲットの情報と、現在のinputの選択状態を比較して処理を行う
+ 
+      for(var i = 0; i < conditions.length; i++){//ターゲットのdata-typeを参照し、メソッドとしてconditionに個別に代入する
+        currentType = conditions[i].getAttribute('data-type');
+        //現在のターゲットのtype情報をカンマ区切りで分割し、配列に代入
+        var currentBoxTypes = $(box[m]).data(currentType).split(',');
+
+        for(var j = 0; j < currentBoxTypes.length; j++){
+          if(condition[currentType][currentBoxTypes[j]]){
+            data_check++;//選択した条件のうちひとつでもマッチしてたらdata_checkを加算してループを抜ける
+            break;
+          } else {
+   
+          }
+        }
+
+      }
+ 
+        if(data_check === conditions.length){
+          count++;
+          $(box[m]).addClass('js_selected');
+        }else{
+ 
+        }
+        data_check = 0;
+ 
+    }
+ 
+ 
+    $('.js_numerator').text(count);//件数表示の分子をセット
+  }
+ 
+  setConditions();
+ 
+  $(document).on('click','input',function(){
+ 
+    setConditions();
+ 
+  });
+ 
+  $(document).on('click','.js_release',function(){
+ 
+    $('.bl_selectBlock_check input').attr("checked", false);
+ 
+    setConditions();
+ 
+  });
+ 
+   
+ 
+ 
+});
+  </script>
+
+</body>
+
+</html>

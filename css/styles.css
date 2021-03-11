@@ -1,0 +1,15 @@
+
+.flex-wrap{
+    display: flex;
+}
+.flex-wrap img{
+    display: block;
+}
+.flex-wrap li{
+    list-style: none;
+    border: 1px solid #eee;
+    padding: 10px;
+    font-size:80%;
+}
+.hidden {
+    display: none;
