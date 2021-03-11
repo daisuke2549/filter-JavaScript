@@ -9,10 +9,9 @@ $(function(){
    
 	var condition ={};//チェックボックスの入力状態を保持するオブジェクト
    
-	$('.js_denominator').text(box.length);//件数表示の分母をセット
    
-	for(var i = 0; i < conditions.length; i++){//ターゲットのdata-typeを参照し、メソッドとしてconditionに個別に代入する
-	  currentType = conditions[i].getAttribute('data-type');
+	for(var i = 0; i < conditions.length; i++){//文字列の長さや配列の要素数などを取得するためのプロパティlengthを使用
+	  currentType = conditions[i].getAttribute('data-type');　//属性値を取得
 	  condition[currentType] = [];
 	}
    
@@ -92,8 +91,17 @@ $(function(){
 	  setConditions();
    
 	});
-   
-	 
-   
-   
   });
+
+
+
+
+
+// $('button').click(function(){
+// 	var cnt = $('input[name="friend[]"]:checked').length
+// 	if (cnt == 0){
+// 		   $('#p01').text('チェックなし')
+// 	}else{
+// 		$('#p01').text(cnt +'匹チェックしました')
+// 	}
+// })
