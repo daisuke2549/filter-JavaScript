@@ -11,7 +11,7 @@ $(function(){
    
    
 	for(var i = 0; i < conditions.length; i++){//文字列の長さや配列の要素数などを取得するためのプロパティlengthを使用
-	  currentType = conditions[i].getAttribute('data-type');　//属性値を取得
+	  currentType = conditions[i].getAttribute('data-type');　//getAttribbuteでdata-typeを取得
 	  condition[currentType] = [];
 	}
    
