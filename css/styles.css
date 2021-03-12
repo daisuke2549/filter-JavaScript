@@ -33,6 +33,7 @@
       }
       .js_target.js_selected{
         display: block;
+        color:red;
       }
       .bl_selectBlock label{
         display: inline;
