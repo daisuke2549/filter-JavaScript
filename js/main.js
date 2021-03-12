@@ -11,30 +11,30 @@ $(function(){
    
    
 	for(var i = 0; i < conditions.length; i++){//文字列の長さや配列の要素数などを取得するためのプロパティlengthを使用
-	  currentType = conditions[i].getAttribute('data-type');　//getAttribbuteでdata-typeを取得
+	  currentType = conditions[i].getAttribute('data-type');　//getAttributeでdata-typeを取得  current typeは現在のdata-type(term shikakuなど)
 	  condition[currentType] = [];
 	}
    
 	function setConditions(){//条件設定
    
 	  count = 0;
-	  box.removeClass('js_selected');
+	  box.removeClass('js_selected');   //ヒット数が0の場合はjs_selectedのクラスを除外する。その場合js_targetクラスはdisplay:noneとなる。
    
 	  for(var i = 0; i < conditions.length; i++){//data-typeごとの処理
    
 		currentType = conditions[i].getAttribute('data-type');
    
-		findConditions = conditions[i].querySelectorAll('input');
+		findConditions = conditions[i].querySelectorAll('input');  //inputタグの要素を取得
    
 		for(var n = 0; n< findConditions.length; n++){//inputごとの処理
    
-		  if(findConditions[n].checked){//現在選択中のインプットが選択されている場合
-			condition[currentType][findConditions[n].value] = true;
+		  if(findConditions[n].checked){//input要素にチェックが入っている場合の処理。
+			condition[currentType][findConditions[n].value] = true;  //⇦input要素に対して、チェックボックスの数が追加される。処理
 			checkcount++
 		  } else {
 			condition[currentType][findConditions[n].value] = false;
 		  }
-		  if(findConditions.length === n+1){//ループが最後の場合
+		  if(findConditions.length === n+1){// inputの要素の個数が　チェックされている数＋1(つまり最後の要素の場合)の処理
 			if(checkcount === 0){
 			  for(var t = 0; t < findConditions.length; t++){
 				condition[currentType][findConditions[t].value] = true;

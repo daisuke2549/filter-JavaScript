@@ -1,22 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<body id="demopage">
+<html lang="ja">
+<body>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
   <title>filter-JavaScript</title>
   <link rel="stylesheet" href="./css/styles.css">
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-48759582-3', 'auto');
-  ga('send', 'pageview');
-
-</script>
 </head>
 
 
@@ -77,6 +67,9 @@
                 <!-- <li><input id="kokka minkan kouteki saiyou" type="radio" name="tag" value="kokka minkan kouteki saiyou">ALL</li>	 -->
               </span>
               <span class="bl_selectBlock_check">
+                <li><input id="" type="radio" name="tag" value="">ALL</li>	
+              </span>
+              <span class="bl_selectBlock_check">
                 <li><input id="kokka" type="radio" name="tag" value="kokka">国家資格</li>	
               </span>
               <span class="bl_selectBlock_check">
@@ -115,13 +108,13 @@
               <span class="bl_selectBlock_check"><input id="difficulty-level4" type="checkbox" name="level" value="difficulty-level4">
               <label for="difficulty-level4">
               <span class="el_checkbox"></span>
-              ★★★
+              ★★★★
               </label>
             　</span>
               <span class="bl_selectBlock_check"><input id="difficulty-level5" type="checkbox" name="level" value="difficulty-level5">
               <label for="difficulty-level5">
               <span class="el_checkbox"></span>
-              ★★★
+              ★★★★★
               </label>
             </span>
             </div>
@@ -176,13 +169,13 @@
       </div>
 
       <div class="bl_searchResultBlock">
-        <div class="bl_searchResultBlock_item js_target" data-cat = "law" data-shikaku = "kokka" data-level="difficulty-level5" data-term="term-3" data-other="no">公認会計士</div>
-        <div class="bl_searchResultBlock_item js_target" data-cat = "law" data-shikaku = "kokka" data-level="difficulty-level5" data-term="term-1" data-other="no">税理士</div>
-        <div class="bl_searchResultBlock_item js_target" data-cat = "law" data-shikaku = "kouteki" data-level="difficulty-level3" data-term="term-4" data-other="no">簿記試験</div>
-        <div class="bl_searchResultBlock_item js_target" data-cat = "fudosan" data-shikaku = "minkan" data-level="difficulty-level1" data-term="term-2" data-other="no">建設業経理士検定</div>
-        <div class="bl_searchResultBlock_item js_target" data-cat = "fudosan" data-shikaku = "kokka" data-level="difficulty-level2" data-term="term-2" data-other="student">ビジネス会計検定試験</div>
-        <div class="bl_searchResultBlock_item js_target" data-cat = "finance" data-shikaku = "saiyou" data-level="difficulty-level4" data-term="term-4" data-other="student">IPO実務検定</div>
-        <div class="bl_searchResultBlock_item js_target" data-cat = "finance" data-shikaku = "kokka" data-level="difficulty-level4" data-term="term-4" data-other="student" >財務報告実務検定</div>
+        <div class="bl_searchResultBlock_item js_target" data-cat = "accounting" data-shikaku = "kokka" data-level="difficulty-level5" data-term="term-4" data-other="student">公認会計士</div>
+        <div class="bl_searchResultBlock_item js_target" data-cat = "accounting" data-shikaku = "kokka" data-level="difficulty-level5" data-term="term-4" data-other="no">税理士</div>
+        <div class="bl_searchResultBlock_item js_target" data-cat = "accounting" data-shikaku = "minkan" data-level="difficulty-level2"   data-term="term-4" data-other="no">簿記試験</div>
+        <div class="bl_searchResultBlock_item js_target" data-cat = "accounting" data-shikaku = "kouteki" data-level="difficulty-level3" data-term="term-2" data-other="no">建設業経理士検定</div>
+        <div class="bl_searchResultBlock_item js_target" data-cat = "accounting" data-shikaku = "kouteki" data-level="difficulty-level2" data-term="term-2" data-other="student">ビジネス会計検定試験</div>
+        <div class="bl_searchResultBlock_item js_target" data-cat = "accounting" data-shikaku = "minkan" data-level="difficulty-level3" data-term="term-4" data-other="student">IPO実務検定</div>
+        <div class="bl_searchResultBlock_item js_target" data-cat = "accounting" data-shikaku = "minkan" data-level="difficulty-level3" data-term="term-4" data-other="student" >財務報告実務検定</div>
 
       </div>
 
@@ -190,13 +183,6 @@
 
   </div>
 
-  <!-- <p>お供に連れていく動物を選択してください。</p>
-  <p><input type="checkbox" name="friend[]" value="dog">イヌ</p>
-  <p><input type="checkbox" name="friend[]" value="monkey">サル</p>
-  <p><input type="checkbox" name="friend[]" value="bird">キジ</p>
-   
-  <button>結果</button>
-  <p id="p01"></p> -->
 
 
   <script src="./js/main.js"></script>
