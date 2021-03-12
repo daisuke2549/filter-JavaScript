@@ -14,6 +14,7 @@ $(function(){
 	  currentType = conditions[i].getAttribute('data-type');　//getAttributeで対象のdata-typeを取得  current typeは現在のdata-type(term shikakuなど)
 	  condition[currentType] = [];  //対象のデータタイプを配列で渡す
 	//   console.log([currentType]);
+	//   console.log(conditions.length);  // 現状のdata typeは５つのため、５と表示される。
 	}
    
 	function setConditions(){//条件設定
@@ -25,8 +26,8 @@ $(function(){
    
 		currentType = conditions[i].getAttribute('data-type');
    
-		findConditions = conditions[i].querySelectorAll('input');  //inputタグの要素data-type毎に取得
-
+		findConditions = conditions[i].querySelectorAll('input');  //inputタグの要素data-type毎に取得。querySelectorAllを使っているため、全部の要素が出力される。
+		
 		// console.log(findConditions)
    
 		for(var n = 0; n< findConditions.length; n++){//inputごとの処理
@@ -34,9 +35,17 @@ $(function(){
 		  if(findConditions[n].checked){//input要素にチェックが入っている場合の処理。
 			condition[currentType][findConditions[n].value] = true;  //⇦input要素に対して、チェックボックスの数が追加される。処理
 			checkcount++
+
+			// console.log([findConditions[n].value]);  //input要素のvalueを返す
+			// console.log([currentType]);  //選択したtypeの値のdata-typeを返す。
+
 		  } else {
 			condition[currentType][findConditions[n].value] = false;
 		  }
+
+
+
+
 		  if(findConditions.length === n+1){//ループが最後のときの処理
 			if(checkcount === 0){
 			  for(var t = 0; t < findConditions.length; t++){    
@@ -53,7 +62,10 @@ $(function(){
    
 		for(var i = 0; i < conditions.length; i++){//ターゲットのdata-typeを参照し、メソッドとしてconditionに個別に代入する
 		  currentType = conditions[i].getAttribute('data-type');//data-typeごとに要素を取得
-		  var currentBoxTypes = $(box[m]).data(currentType).split(',');
+		  var currentBoxTypes = $(box[m]).data(currentType).split(',');  //datatypeをカンマで区切って配列にする
+
+		  console.log(currentBoxTypes);  
+
   
 		  for(var j = 0; j < currentBoxTypes.length; j++){
 			if(condition[currentType][currentBoxTypes[j]]){
@@ -63,17 +75,16 @@ $(function(){
 	 
 			}
 		  }
-  
 		}
    
-		  if(data_check === conditions.length){
+		  if(data_check === conditions.length){   //対象項目のチェック状態と
 			count++;
 			$(box[m]).addClass('js_selected');
 		  }else{
    
 		  }
 		  data_check = 0;
-   
+
 	  }
    
 	}
@@ -85,7 +96,22 @@ $(function(){
 	  setConditions();
    
 	});
-   
-
   });
 
+
+
+
+
+// let x  = document.querySelector(".test");
+// let y = document.querySelector("p");
+
+// x.innerHTML = "文章の内容を変更しました。";
+// y.innerHTML = "文章変更パート２";
+
+// // for(let i = 0; i < y.length; ++i){
+// // 	y[i].innerHTML = "文章変更パート２";
+// // }
+
+// let spanText = document.getElementById('spanText');
+// console.log(spanText);
+// console.log(spanText.textContent);
