@@ -26,7 +26,7 @@ $(function(){
    
 		currentType = conditions[i].getAttribute('data-type');
    
-		findConditions = conditions[i].querySelectorAll('input');  //inputタグの要素data-type毎に取得。querySelectorAllを使っているため、全部の要素が出力される。
+		findConditions = conditions[i].querySelectorAll('ul.js_conditions li input');  //inputタグの要素data-type毎に取得。querySelectorAllを使っているため、全部の要素が出力される。
 		
 		// console.log(findConditions)
    
@@ -64,7 +64,7 @@ $(function(){
 		  currentType = conditions[i].getAttribute('data-type');//data-typeごとに要素を取得
 		  var currentBoxTypes = $(box[m]).data(currentType).split(',');  //datatypeをカンマで区切って配列にする
 
-		  console.log(currentBoxTypes);  
+		//   console.log(currentBoxTypes);  
 
   
 		  for(var j = 0; j < currentBoxTypes.length; j++){

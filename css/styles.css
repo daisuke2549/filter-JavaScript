@@ -37,8 +37,6 @@
       .bl_selectBlock label{
         display: inline;
       }
-      .bl_selectBlock input{
-      }
       .bl_selectBlock_check label .el_checkbox{
         position: relative;
         top: 3px;

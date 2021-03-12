@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
+  <title>filter-JavaScript</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+
+
+
+
+  <form class="class_find">
+	
+    <p class="DTLparts__paragraph--heading mt30">ジャンル</p>
+    <ul class ="js_conditions" data-type="cat">
+        <li><input id="accounting" type="radio" name="category" value="accounting">ALL</li>
+        <li><input id="law" type="radio" name="category" value="law">会計関係</li>
+        <li><input id="law" type="radio" name="category" value="law">法律関係</li>
+        <li><input id="koumuinn" type="radio" name="category" value="koumuinn">公務員・教員関係</li>
+        <li><input id="keiei" type="radio" name="category" value="keiei">経営・労務関係</li>
+        <li><input id="fudosan" type="radio" name="category" value="fudosan">不動産・建築・設備関係</li>
+        <li><input id="finance" type="radio" name="category" value="finance">金融</li>
+        <li><input id="international" type="radio" name="category" value="international">国際関係・語学</li>
+        <li><input id="information" type="radio" name="category" value="information">情報処理・パソコン</li>
+    </ul>		
+    <p class="DTLparts__paragraph--heading mt30">資格区分</p>
+    <ul class ="js_conditions" data-type="shikaku">
+        <li><input type="radio" name="tag" value="">ALL</li>
+        <li><input id="kokka" type="radio" name="tag" value="kokka">国家資格</li>	
+        <li><input id="minkan" type="radio" name="tag" value="minkan">民間資格</li>	
+        <li><input id="kouteki" type="radio" name="tag" value="kouteki">公的資格</li>	
+        <li><input id="saiyou" type="radio" name="tag" value="saiyou">採用試験</li>	
+    </ul>	
+    <p class="DTLparts__paragraph--heading mt30" >難易度</p>
+    <ul class ="js_conditions" data-type="level">
+        <li><input id="difficulty-level1" type="checkbox" name="level" value="difficulty-level1"><label for="difficulty-level1">★</label></li>
+        <li><input id="difficulty-level2" type="checkbox" name="level" value="difficulty-level2"><label for="difficulty-level2">★★</label></li>
+        <li><input id="difficulty-level3" type="checkbox" name="level" value="difficulty-level3"><label for="difficulty-level3">★★★</label></li>
+        <li><input id="difficulty-level4" type="checkbox" name="level" value="difficulty-level4">
+                  <label for="difficulty-level4">★★★★</label></li>
+        <li><input id="difficulty-level5" type="checkbox" name="level" value="difficulty-level5">
+                  <label for="difficulty-level5">★★★★★</label></li>
+    </ul>	
+    <p class="DTLparts__paragraph--heading mt30">標準学習期閤</p>
+    <ul class ="js_conditions" data-type="term">
+        <li><input id="term-1" type="checkbox" name="term" value="term-1">
+                    <label for="term-1">6か月以内</label></li>
+        <li><input id="term-2" type="checkbox" name="term" value="term-2">
+                    <label for="term-3">6か月～1年半</label></li>
+        <li><input id="term-3" type="checkbox" name="term" value="term-3">
+                    <label for="term-3">1年半～3年</label></li>
+        <li><input id="term-4" type="checkbox" name="term" value="term-4">
+                    <label for="term-4">
+                      <span class="el_checkbox">3年以上
+    </span></label></li>
+    </ul>	
+    <p class="DTLparts__paragraph--heading mt30">その他</p>
+    <ul class ="js_conditions" data-type="other">
+        <li><input id="other-no" type="checkbox" name="other" value="no">
+                    <label for="other-no">受験資格なし</label></li>
+        <li><input id="other-student" type="checkbox" name="other" value="student">
+                    <label for="other-student">学生に人気</label></li>
+    </ul>
+    
+    </form>
+
+ <div class="bl_searchResultBlock">
+        <div class="bl_searchResultBlock_item js_target" data-cat = "accounting" data-shikaku = "kokka" data-level="difficulty-level5" data-term="term-4" data-other="student">公認会計士</div>
+        <div class="bl_searchResultBlock_item js_target" data-cat = "accounting" data-shikaku = "kokka" data-level="difficulty-level5" data-term="term-4" data-other="no">税理士</div>
+        <div class="bl_searchResultBlock_item js_target" data-cat = "accounting" data-shikaku = "minkan" data-level="difficulty-level2"   data-term="term-4" data-other="no">簿記試験</div>
+        <div class="bl_searchResultBlock_item js_target" data-cat = "accounting" data-shikaku = "kouteki" data-level="difficulty-level3" data-term="term-2" data-other="no">建設業経理士検定</div>
+        <div class="bl_searchResultBlock_item js_target" data-cat = "accounting" data-shikaku = "kouteki" data-level="difficulty-level2" data-term="term-2" data-other="student">ビジネス会計検定試験</div>
+        <div class="bl_searchResultBlock_item js_target" data-cat = "accounting" data-shikaku = "minkan" data-level="difficulty-level3" data-term="term-4" data-other="student">IPO実務検定</div>
+        <div class="bl_searchResultBlock_item js_target" data-cat = "law" data-shikaku = "minkan" data-level="difficulty-level3" data-term="term-4" data-other="student" >財務報告実務検定</div>
+
+      </div>
+
+
+
+
+
+
+  <script src="./js/main.js"></script>
+
+</body>
+
+</html>
