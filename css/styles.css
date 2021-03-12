@@ -128,12 +128,3 @@
       .bl_selectBlock_check:last-child{
         margin-right: 0;
       }
-      .bl_selectBlock_release{
-        text-align: center;
-        color: #fff;
-        background-color: #bdbdbd;
-        padding: 15px 0;
-      }
-      .js_release{
-        cursor: pointer;
-      }

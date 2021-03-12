@@ -84,24 +84,10 @@ $(function(){
    
 	});
    
-	$(document).on('click','.js_release',function(){
-   
-	  $('.bl_selectBlock_check input').attr("checked", false);
-   
-	  setConditions();
-   
-	});
+
   });
 
 
 
 
 
-// $('button').click(function(){
-// 	var cnt = $('input[name="friend[]"]:checked').length
-// 	if (cnt == 0){
-// 		   $('#p01').text('チェックなし')
-// 	}else{
-// 		$('#p01').text(cnt +'匹チェックしました')
-// 	}
-// })
