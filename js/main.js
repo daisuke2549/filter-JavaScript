@@ -1,16 +1,16 @@
 $(function(){
-	var box = $('.js_target');//検索対象
-	var conditions = $('.js_conditions');//現在の条件の選択状況を保持するオブジェクト
-	var findConditions;//各data-typeの子要素(input)を格納する
-	var currentType;//現在のdata-typeを示す
-	var count = 0;//検索ヒット数
-	var checkcount = 0;//各data-typeのチェックボックス選択数 初期値は0
-	var data_check = 0;//対象項目のデータがどれだけチェック状態と一致しているか。初期値は0
+	let box = $('.js_target');//検索対象
+	let conditions = $('.js_conditions');//現在の条件の選択状況を保持するオブジェクト
+	let findConditions;//各data-typeの子要素(input)を格納する
+	let currentType;//現在のdata-typeを示す
+	let count = 0;//検索ヒット数
+	let checkcount = 0;//各data-typeのチェックボックス選択数 初期値は0
+	let data_check = 0;//対象項目のデータがどれだけチェック状態と一致しているか。初期値は0
    
-	var condition ={};//チェックボックスの入力状態を保持するオブジェクト
+	let condition ={};//チェックボックスの入力状態を保持するオブジェクト
    
    
-	for(var i = 0; i < conditions.length; i++){//文字列の長さや配列の要素数などを取得するためのプロパティlengthを使用
+	for(let i = 0; i < conditions.length; i++){//文字列の長さや配列の要素数などを取得するためのプロパティlengthを使用
 	  currentType = conditions[i].getAttribute('data-type');　//getAttributeで対象のdata-typeを取得  current typeは現在のdata-type(term shikakuなど)
 	  condition[currentType] = [];  //対象のデータタイプを配列で渡す
 	//   console.log([currentType]);
@@ -22,7 +22,7 @@ $(function(){
 	  count = 0;
 	  box.removeClass('js_selected');   //ヒット数が0の場合はjs_selectedのクラスを除外する。その場合js_targetクラスはdisplay:noneとなる。
    
-	  for(var i = 0; i < conditions.length; i++){//data-typeごとの処理
+	  for(let i = 0; i < conditions.length; i++){//data-typeごとの処理
    
 		currentType = conditions[i].getAttribute('data-type');
    
@@ -30,7 +30,7 @@ $(function(){
 		
 		// console.log(findConditions)
    
-		for(var n = 0; n< findConditions.length; n++){//inputごとの処理
+		for(let n = 0; n< findConditions.length; n++){//inputごとの処理
    
 		  if(findConditions[n].checked){//input要素にチェックが入っている場合の処理。
 			condition[currentType][findConditions[n].value] = true;  //⇦input要素に対して、チェックボックスの数が追加される。処理
@@ -48,7 +48,7 @@ $(function(){
 
 		  if(findConditions.length === n+1){//ループが最後のときの処理
 			if(checkcount === 0){
-			  for(var t = 0; t < findConditions.length; t++){    
+			  for(let t = 0; t < findConditions.length; t++){    
 				condition[currentType][findConditions[t].value] = true;
 			  }
 			}
@@ -58,16 +58,16 @@ $(function(){
 	  }
    
    
-	  for(var m = 0, len = box.length; m< len; ++m){//最初に取得した検索情報と、現在のinputの選択状態を比較して処理を行う
+	  for(let m = 0, len = box.length; m< len; ++m){//最初に取得した検索情報と、現在のinputの選択状態を比較して処理を行う
    
-		for(var i = 0; i < conditions.length; i++){//ターゲットのdata-typeを参照し、メソッドとしてconditionに個別に代入する
+		for(let i = 0; i < conditions.length; i++){//ターゲットのdata-typeを参照し、メソッドとしてconditionに個別に代入する
 		  currentType = conditions[i].getAttribute('data-type');//data-typeごとに要素を取得
-		  var currentBoxTypes = $(box[m]).data(currentType).split(',');  //datatypeをカンマで区切って配列にする
+		  let currentBoxTypes = $(box[m]).data(currentType).split(',');  //datatypeをカンマで区切って配列にする
 
 		//   console.log(currentBoxTypes);  
 
   
-		  for(var j = 0; j < currentBoxTypes.length; j++){
+		  for(let j = 0; j < currentBoxTypes.length; j++){
 			if(condition[currentType][currentBoxTypes[j]]){
 			  data_check++;//選択した条件のうちひとつでもマッチしてたらdata_checkを加算してループを抜ける
 			  break
