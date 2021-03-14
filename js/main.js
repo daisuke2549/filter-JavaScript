@@ -102,16 +102,3 @@ $(function(){
 
 
 
-// let x  = document.querySelector(".test");
-// let y = document.querySelector("p");
-
-// x.innerHTML = "文章の内容を変更しました。";
-// y.innerHTML = "文章変更パート２";
-
-// // for(let i = 0; i < y.length; ++i){
-// // 	y[i].innerHTML = "文章変更パート２";
-// // }
-
-// let spanText = document.getElementById('spanText');
-// console.log(spanText);
-// console.log(spanText.textContent);
