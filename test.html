@@ -1,0 +1,406 @@
+本番環境と同じコード
+
+<!DOCTYPE html>
+<html lang="ja">
+<body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
+  <title>test-filter-JavaScript</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+
+<!-- <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script> -->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+
+
+  
+<form class="class_find">
+	
+    <p class="DTLparts__paragraph--heading mt30">ジャンル</p>
+    <ul class="js_conditions" data-type="cat">
+        <li><input id="accounting" type="radio" name="category" value="accounting">会計関係</li>
+        <li><input id="law" type="radio" name="category" value="law">法律関係</li>
+        <li><input id="koumuinn" type="radio" name="category" value="koumuinn">公務員・教員関係</li>
+        <li><input id="keiei" type="radio" name="category" value="keiei">経営・労務関係</li>
+        <li><input id="fudosan" type="radio" name="category" value="fudosan">不動産・建築・設備関係</li>
+        <li><input id="finance" type="radio" name="category" value="finance">金融</li>
+        <li><input id="international" type="radio" name="category" value="international">国際関係・語学</li>
+        <li><input id="information" type="radio" name="category" value="information">情報処理・パソコン</li>
+    </ul>		
+    <p class="DTLparts__paragraph--heading mt30">資格区分</p>
+    <ul class="js_conditions" data-type="shikaku">
+        <li><input id="kokka" type="radio" name="tag" value="kokka">国家資格</li>	
+        <li><input id="minkan" type="radio" name="tag" value="minkan">民間資格</li>	
+        <li><input id="kouteki" type="radio" name="tag" value="kouteki">公的資格</li>	
+        <li><input id="saiyou" type="radio" name="tag" value="saiyou">採用試験</li>	
+    </ul>	
+    <p class="DTLparts__paragraph--heading mt30">難易度</p>
+    <ul class="js_conditions" data-type="level">
+        <li><input id="difficulty-level1" type="checkbox" name="level" value="difficulty-level1"><label for="difficulty-level1">★</label></li>
+        <li><input id="difficulty-level2" type="checkbox" name="level" value="difficulty-level2"><label for="difficulty-level2">★★</label></li>
+        <li><input id="difficulty-level3" type="checkbox" name="level" value="difficulty-level3"><label for="difficulty-level3">★★★</label></li>
+        <li><input id="difficulty-level4" type="checkbox" name="level" value="difficulty-level4">
+                  <label for="difficulty-level4">★★★★</label></li>
+        <li><input id="difficulty-level5" type="checkbox" name="level" value="difficulty-level5">
+                  <label for="difficulty-level5">★★★★★</label></li>
+    </ul>	
+    <p class="DTLparts__paragraph--heading mt30">標準学習期閤</p>
+    <ul class="js_conditions" data-type="term">
+        <li><input id="term-1" type="checkbox" name="term" value="term-1">
+                    <label for="term-1">6か月以内</label></li>
+        <li><input id="term-2" type="checkbox" name="term" value="term-2">
+                    <label for="term-3">6か月～1年半</label></li>
+        <li><input id="term-3" type="checkbox" name="term" value="term-3">
+                    <label for="term-3">1年半～3年</label></li>
+        <li><input id="term-4" type="checkbox" name="term" value="term-4">
+                    <label for="term-4">
+                      <span class="el_checkbox">3年以上
+    </span></label></li>
+    </ul>	
+    <p class="DTLparts__paragraph--heading mt30">その他</p>
+    <ul class="js_conditions" data-type="other">
+        <li><input id="other-no" type="checkbox" name="other" value="no">
+                    <label for="other-no">受験資格なし</label></li>
+        <li><input id="other-student" type="checkbox" name="other" value="student">
+                    <label for="other-student">学生に人気</label></li>
+    </ul>
+    
+    </form>
+
+
+
+    <div class="DTLcontentslistbox--group2">
+        <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="kokka" data-level="difficulty-level5" data-term="term-4" data-other="student">
+    
+            <div class="DTLcontentslistbox__title"><span>公認会計士</span></div>
+            <div class="DTLcontentslistbox__content">
+                <ul class="DTLtextitemGroup">
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>標準学習期間</p>
+                        </div>
+                        <p class="DTLcontentList__text">1～3年</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験方式</p>
+                        </div>
+                        <p class="DTLcontentList__text">短答式、論文式</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験日</p>
+                        </div>
+                        <p class="DTLcontentList__text">短答：例年12月•5月、論文：例年8月</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>実施機関</p>
+                        </div>
+                        <p class="DTLcontentList__text">公認会計士・監査審査会</p>
+                    </li>
+    
+                </ul>
+                <p class="DTLparts__paragraph--heading">会計資格の最高峰。活躍の舞台は無限大</p> 
+                <p class="DTLparts__paragraph--normal">「財務諸表監査」は会計士の独占業務。上場企業などの決算書類をチェックし保証することで、経済活 動を根底から支える。会計・監査のスペシャリスト。</p>
+    
+    <div class="DTLbutton__group--centering">
+        <div class="DTLbutton--normal">
+            <a href="#">
+                <div class="DTLbutton--content">
+                    <p class="DTLbutton--text">詳しくはこちら</p>
+    
+                </div>
+            </a>
+        </div>
+    </div>
+    
+            </div>
+        </div>
+        <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="kokka" data-level="difficulty-level5" data-term="term-4" data-other="no">
+    
+            <div class="DTLcontentslistbox__title"><span>税理士</span></div>
+            <div class="DTLcontentslistbox__content">
+                <ul class="DTLtextitemGroup">
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>標準学習期閤</p>
+                        </div>
+                        <p class="DTLcontentList__text">3～5年</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験方式</p>
+                        </div>
+                        <p class="DTLcontentList__text">論述式</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験日</p>
+                        </div>
+                        <p class="DTLcontentList__text">8月</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>実施機関</p>
+                        </div>
+                        <p class="DTLcontentList__text">国税審議会税理士分科会</p>
+                    </li>
+    
+                </ul>
+                <p class="DTLparts__paragraph--heading">企業経営をサポートする税務・会計のスペシャリスト</p> 
+                <p class="DTLparts__paragraph--normal">税理士の仕事は、企業の税務申告や会計業務に留まらず、税務・会計をベースにしたコンサルティングを通して企業経営の安定・発展に貢献できるやりがいのある職業です。 少子高齢化により、相続・事業承継等の業務はますます増えていきます。</p>
+    <div class="DTLbutton__group--centering">
+        <div class="DTLbutton--normal">
+            <a href="#">
+                <div class="DTLbutton--content">
+                    <p class="DTLbutton--text">詳しくはこちら</p>
+    
+                </div>
+            </a>
+        </div>
+    </div>
+            </div>
+        </div>
+        <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="minkan" data-level="difficulty-level2" data-term="term-4" data-other="no">
+    
+            <div class="DTLcontentslistbox__title"><span>簿記検定</span></div>
+            <div class="DTLcontentslistbox__content">
+                <ul class="DTLtextitemGroup">
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>標準学習期間</p>
+                        </div>
+                        <p class="DTLcontentList__text">2ヵ月〜1年　(3.2.1級）</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験方式</p>
+                        </div>
+                        <p class="DTLcontentList__text">統一試験（ペーパーテスト）、ネット試験方式（ＣＢＴ試験）</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験日</p>
+                        </div>
+                        <p class="DTLcontentList__text">統一試験：例年6月、11月、2月、ネット試験：随時</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>実施機関</p>
+                        </div>
+                        <p class="DTLcontentList__text">日本商工会議所・各地区商工会議所・ＣＢＴソリューションズ（ネット試験）</p>
+                    </li>
+    
+                </ul>
+                <p class="DTLparts__paragraph--heading">仕事で活かせる人気資格。近年の3級試験改定で魅力UP</p> 
+                <p class="DTLparts__paragraph--normal">どの業界のビジネスパーソンでも必要になるスキルを習得できるため、年間約60万人以上の方々が受験する、社会的に高い信頼と評価を得ている人気の資格。<br>
+    現在、多くの企業が社員に対して簿記検定の資格取得を奨励しているなど、社会人として持っておくべき必須のスキルです。</p>
+    <div class="DTLbutton__group--centering">
+        <div class="DTLbutton--normal">
+            <a href="#">
+                <div class="DTLbutton--content">
+                    <p class="DTLbutton--text">詳しくはこちら</p>
+    
+                </div>
+            </a>
+        </div>
+    </div>
+            </div>
+        </div>
+        <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="kouteki" data-level="difficulty-level3" data-term="term-2" data-other="no">
+    
+            <div class="DTLcontentslistbox__title"><span>建設業経理士検定</span></div>
+            <div class="DTLcontentslistbox__content">
+                <ul class="DTLtextitemGroup">
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>標準学習期間</p>
+                        </div>
+                        <p class="DTLcontentList__text">1～3年</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験方式</p>
+                        </div>
+                        <p class="DTLcontentList__text">記述式</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験日</p>
+                        </div>
+                        <p class="DTLcontentList__text">例年3月・9月</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>実施機関</p>
+                        </div>
+                        <p class="DTLcontentList__text">（一財）建設業振興基金</p>
+                    </li>
+    
+                </ul>
+                <p class="DTLparts__paragraph--heading">建設業界の会計マスターになる</p> 
+                <p class="DTLparts__paragraph--normal">建設業界の財務部門で活躍する方を対象に建設業経理に関する知識や処理能力を図るための試験。</p>
+    <div class="DTLbutton__group--centering">
+        <div class="DTLbutton--normal">
+            <a href="#">
+                <div class="DTLbutton--content">
+                    <p class="DTLbutton--text">詳しくはこちら</p>
+    
+                </div>
+            </a>
+        </div>
+    </div>
+            </div>
+        </div>
+        <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="kouteki" data-level="difficulty-level2" data-term="term-2" data-other="student">
+    
+            <div class="DTLcontentslistbox__title"><span>ビジネス会計検定試験</span></div>
+            <div class="DTLcontentslistbox__content">
+    <ul class="DTLtextitemGroup">
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>標準学習期間</p>
+                        </div>
+                        <p class="DTLcontentList__text">1～3年</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験方式</p>
+                        </div>
+                        <p class="DTLcontentList__text">記述式</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験日</p>
+                        </div>
+                        <p class="DTLcontentList__text">例年3月・10月</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>実施機関</p>
+                        </div>
+                        <p class="DTLcontentList__text">大阪商工会議所・各地区商工会議所</p>
+                    </li>
+    
+                </ul>
+                <p class="DTLparts__paragraph--heading">会計の数字に強くなる！財務分析力習得</p> 
+                <p class="DTLparts__paragraph--normal">企業の財務諸表の数値から経営状況を把握する分析力スキルを習得駅る資格。会計資格でありながら会計知識が無くても学習を始められるのがメリット。</p>
+    <div class="DTLbutton__group--centering">
+        <div class="DTLbutton--normal">
+            <a href="#">
+                <div class="DTLbutton--content">
+                    <p class="DTLbutton--text">詳しくはこちら</p>
+    
+                </div>
+            </a>
+        </div>
+    </div>
+            </div>
+        </div>
+        <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="minkan" data-level="difficulty-level3" data-term="term-4" data-other="student">
+    
+            <div class="DTLcontentslistbox__title"><span>IPO実務検定</span></div>
+            <div class="DTLcontentslistbox__content">
+                <ul class="DTLtextitemGroup">
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>標準学習期間</p>
+                        </div>
+                        <p class="DTLcontentList__text">2か月</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験方式</p>
+                        </div>
+                        <p class="DTLcontentList__text">CBT方式</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験日</p>
+                        </div>
+                        <p class="DTLcontentList__text">随時</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>実施機関</p>
+                        </div>
+                        <p class="DTLcontentList__text">（一社）日本IPO実務検定協会</p>
+                    </li>
+    
+                </ul>
+                <p class="DTLparts__paragraph--heading">上場準備担当者の育成や実務能力を認定する</p> 
+                <p class="DTLparts__paragraph--normal">会社経営にかかわる知識を満遍なく習得できるため、ビジネスパーソンにお勧め。現在、経理関係の仕事に従事しており、CFOを目指す方は是非習得しておきたい。</p>
+    <div class="DTLbutton__group--centering">
+        <div class="DTLbutton--normal">
+            <a href="#">
+                <div class="DTLbutton--content">
+                    <p class="DTLbutton--text">詳しくはこちら</p>
+    
+                </div>
+            </a>
+        </div>
+    </div>
+            </div>
+        </div>
+        <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="minkan" data-level="difficulty-level3" data-term="term-4" data-other="student">
+    
+            <div class="DTLcontentslistbox__title"><span>財務報告実務検定</span></div>
+            <div class="DTLcontentslistbox__content">
+                <ul class="DTLtextitemGroup">
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>標準学習期間</p>
+                        </div>
+                        <p class="DTLcontentList__text">2か月</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験方式</p>
+                        </div>
+                        <p class="DTLcontentList__text">CBT方式</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>試験日</p>
+                        </div>
+                        <p class="DTLcontentList__text">随時</p>
+                    </li>
+                    <li>
+                        <div class="DTLcontentList__item--shortBlack">
+                            <p>実施機関</p>
+                        </div>
+                        <p class="DTLcontentList__text">（一社）日本IPO実務検定協会</p>
+                    </li>
+    
+                </ul>
+                <p class="DTLparts__paragraph--heading">財務報告制度に係る実務担当者を育成</p> 
+                <p></p><p class="DTLparts__paragraph--normal">財務報告者に求められる①業績動向の把握、②開示書類への落とし込み、③経営方針、企業統治の状況等を投資家に伝達する等に必要なスキルを習得する。</p>
+    <div class="DTLbutton__group--centering">
+        <div class="DTLbutton--normal">
+            <a href="#">
+                <div class="DTLbutton--content">
+                    <p class="DTLbutton--text">詳しくはこちら</p>
+    
+                </div>
+            </a>
+        </div>
+    </div>
+            </div>
+        </div>	
+    </div>
+
+
+  <script src="./js/main.js"></script>
+
+</body>
+
+</html>

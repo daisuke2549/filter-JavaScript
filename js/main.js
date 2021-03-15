@@ -1,3 +1,4 @@
+(function ($) {
 $(function(){
 	let box = $('.js_target');//検索対象
 	let conditions = $('.js_conditions');//現在の条件の選択状況を保持するオブジェクト
@@ -97,8 +98,16 @@ $(function(){
    
 	});
   });
+})(jQuery);
 
 
+$(function(){
+	$('.js_target.js_selected').css('color', 'blue');
+	// $('#first', '#second').css('color', 'red'); エラー。よくやるw
+  });
 
-
-
+(function ($) {
+  $(function(){
+	$('.DTLparts__paragraph--heading').css('color', 'green');
+  });
+})(jQuery);
