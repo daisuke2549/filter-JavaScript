@@ -26,23 +26,21 @@
 	
     <p class="DTLparts__paragraph--heading mt30">ジャンル</p>
     <ul class ="js_conditions" data-type="cat">
-        <li><input id="" type="radio" name="category" value=""  >ALL</li>
-        <li><input id="accounting" type="radio" name="category" value="accounting">会計関係</li>
-        <li><input id="law" type="radio" name="category" value="law">法律関係</li>
-        <li><input id="koumuinn" type="radio" name="category" value="koumuinn">公務員・教員関係</li>
-        <li><input id="keiei" type="radio" name="category" value="keiei">経営・労務関係</li>
-        <li><input id="fudosan" type="radio" name="category" value="fudosan">不動産・建築・設備関係</li>
-        <li><input id="finance" type="radio" name="category" value="finance">金融</li>
-        <li><input id="international" type="radio" name="category" value="international">国際関係・語学</li>
-        <li><input id="information" type="radio" name="category" value="information">情報処理・パソコン</li>
+        <li><input id="accounting" type="checkbox" name="category" value="accounting">会計関係</li>
+        <li><input id="law" type="checkbox" name="category" value="law">法律関係</li>
+        <li><input id="koumuinn" type="checkbox" name="category" value="koumuinn">公務員・教員関係</li>
+        <li><input id="keiei" type="checkbox" name="category" value="keiei">経営・労務関係</li>
+        <li><input id="fudosan" type="checkbox" name="category" value="fudosan">不動産・建築・設備関係</li>
+        <li><input id="finance" type="checkbox" name="category" value="finance">金融</li>
+        <li><input id="international" type="checkbox" name="category" value="international">国際関係・語学</li>
+        <li><input id="information" type="checkbox" name="category" value="information">情報処理・パソコン</li>
     </ul>		
     <p class="DTLparts__paragraph--heading mt30">資格区分</p>
     <ul class ="js_conditions" data-type="shikaku">
-        <li><input type="radio" name="tag" value="">ALL</li>
-        <li><input id="kokka" type="radio" name="tag" value="kokka">国家資格</li>	
-        <li><input id="minkan" type="radio" name="tag" value="minkan">民間資格</li>	
-        <li><input id="kouteki" type="radio" name="tag" value="kouteki">公的資格</li>	
-        <li><input id="saiyou" type="radio" name="tag" value="saiyou">採用試験</li>	
+        <li><input id="kokka" type="checkbox" name="tag" value="kokka">国家資格</li>	
+        <li><input id="minkan" type="checkbox" name="tag" value="minkan">民間資格</li>	
+        <li><input id="kouteki" type="checkbox" name="tag" value="kouteki">公的資格</li>	
+        <li><input id="saiyou" type="checkbox" name="tag" value="saiyou">採用試験</li>	
     </ul>	
     <p class="DTLparts__paragraph--heading mt30" >難易度</p>
     <ul class ="js_conditions" data-type="level">
@@ -57,15 +55,11 @@
     <p class="DTLparts__paragraph--heading mt30">標準学習期閤</p>
     <ul class ="js_conditions" data-type="term">
         <li><input id="term-1" type="checkbox" name="term" value="term-1">
-                    <label for="term-1">6か月以内</label></li>
+                    <label for="term-1">６ヵ月以内</label></li>
         <li><input id="term-2" type="checkbox" name="term" value="term-2">
-                    <label for="term-3">6か月～1年半</label></li>
+                    <label for="term-3">６ヵ月～１年半</label></li>
         <li><input id="term-3" type="checkbox" name="term" value="term-3">
-                    <label for="term-3">1年半～3年</label></li>
-        <li><input id="term-4" type="checkbox" name="term" value="term-4">
-                    <label for="term-4">
-                      <span class="el_checkbox">3年以上
-    </span></label></li>
+                    <label for="term-3">１年半以上</label></li>
     </ul>	
     <p class="DTLparts__paragraph--heading mt30">その他</p>
     <ul class ="js_conditions" data-type="other">
@@ -79,7 +73,7 @@
 
    
 <div class="DTLcontentslistbox--group2">
-    <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="kokka" data-level="difficulty-level5" data-term="term-4" data-other="student">
+    <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="kokka" data-level="difficulty-level5" data-term="term-3" data-other="student">
 
         <div class="DTLcontentslistbox__title"><span>公認会計士</span></div>
         <div class="DTLcontentslistbox__content">
@@ -126,7 +120,7 @@
 
         </div>
     </div>
-    <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="kokka" data-level="difficulty-level5" data-term="term-4" data-other="no">
+    <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="kokka" data-level="difficulty-level5" data-term="term-3" data-other="no">
 
         <div class="DTLcontentslistbox__title"><span>税理士</span></div>
         <div class="DTLcontentslistbox__content">
@@ -171,7 +165,7 @@
 </div>
         </div>
     </div>
-    <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="minkan" data-level="difficulty-level2" data-term="term-4" data-other="no">
+    <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="minkan" data-level="difficulty-level2" data-term="term-2" data-other="no">
 
         <div class="DTLcontentslistbox__title"><span>簿記検定</span></div>
         <div class="DTLcontentslistbox__content">
@@ -307,7 +301,7 @@
 </div>
         </div>
     </div>
-    <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="minkan" data-level="difficulty-level3" data-term="term-4" data-other="student">
+    <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="minkan" data-level="difficulty-level3" data-term="term-1" data-other="student">
 
         <div class="DTLcontentslistbox__title"><span>IPO実務検定</span></div>
         <div class="DTLcontentslistbox__content">
@@ -352,7 +346,7 @@
 </div>
         </div>
     </div>
-    <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="minkan" data-level="difficulty-level3" data-term="term-4" data-other="student">
+    <div class="DTLcontentslistbox list_item js_target" data-cat="accounting" data-shikaku="minkan" data-level="difficulty-level3" data-term="term-1" data-other="student">
 
         <div class="DTLcontentslistbox__title"><span>財務報告実務検定</span></div>
         <div class="DTLcontentslistbox__content">
